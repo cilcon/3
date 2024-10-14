@@ -635,7 +635,10 @@ if (scene == "M"){
 						ctx.font = "700 14px Arial"; ctx.fillStyle = "black"; ctx.textAlign = "center";
 						ctx.fillText(pArray[i+z*2+curr2],237+310*i,79+95*z);
 						ctx.font = "900 18px Arial"; ctx.fillStyle = "black"; ctx.textAlign = "left";
-						ctx.fillText(p2Array[i+z*2+curr2]+"+"+celA[atm[0]].pspent,223+310*i,111+95*z);
+						for (let p = 0; p < celA.length; p++){
+							if (celA[p].name==pArray[i+z*2+curr2]){atm[4]=p;}
+						}
+						ctx.fillText(p2Array[i+z*2+curr2]+"+"+celA[atm[4]].pspent,223+310*i,111+95*z);
 					}
 					else{ctx.drawImage(eempty,0+310*i,0+95*z,800,400);}
 				}}
